@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 import { Grid } from "@chakra-ui/react"
 
 export default function Featured(){
-    return(<div id="articles" style={{backgroundColor:'white', height:'1300px', alignItems:'normal', padding:'100px 10%'}} className="container">
+    return(<div id="articles" style={{backgroundColor:'white', alignItems:'normal', padding:'100px 10%'}} className="container">
         <div className="section1">
             <div style={{padding:'0 10%', color:'black', width:'900px',display:'flex', alignItems:'center'}}>
                 <div>
@@ -17,7 +17,7 @@ export default function Featured(){
                     </div>
                 </div>
             </div>
-            <img style={{minHeight:'400px', minWidth:'520px'}} src="https://media.istockphoto.com/id/1217079550/photo/young-man-using-a-phone-at-home.jpg?s=612x612&w=0&k=20&c=CZJal1ZLccLIgn5KwfAhSBGOwc-37j1Mf5lSvW5wL38=" />
+            <img style={{minHeight:'600px', minWidth:'520px'}} src="https://media.istockphoto.com/id/1217079550/photo/young-man-using-a-phone-at-home.jpg?s=612x612&w=0&k=20&c=CZJal1ZLccLIgn5KwfAhSBGOwc-37j1Mf5lSvW5wL38=" />
         </div>
         <Grid templateColumns="repeat(3, 1fr)" gap="16">
             <div className="section2">
