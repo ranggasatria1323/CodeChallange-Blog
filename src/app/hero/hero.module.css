@@ -1,0 +1,83 @@
+.container{
+    padding: 0 10%;
+    width: 100%;
+}
+
+.Hero{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 160px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 20%);
+    background-image: url(../../../public/bmw.gif);
+    background-size: cover;
+}
+
+.post {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    grid-template-columns: repeat(12,minmax(0, 1fr));
+    width: 100%;
+    height: 250px;
+    gap: 20px;
+}
+
+.postHover:hover{
+    color: rgb(84, 84, 255);
+    opacity: 100%;
+}
+
+.inlineGrid1{
+    height: 100%;
+    width: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 30%);
+    background-image: url('https://cdn0-production-images-kly.akamaized.net/5SvwpfnqNVacME0dJX8anl1lTWo=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2374839/original/081333200_1538679407-2-6.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.inlineGrid2{
+    height: 100%;
+    width: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 30%);
+    background-image: url('https://akcdn.detik.net.id/visual/2015/03/30/2bea6bee-cd0c-4362-9ea0-f3e11d91f426_169.jpg?w=650');
+    background-size: cover;
+    background-position: center;
+}
+
+.inlineGrid3{
+    height: 100%;
+    width: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 30%);
+    background-image: url('https://www.irishtimes.com/resizer/v2/6LIXU2GRIM6YZMQFCBRDNZGYTE.jpg?auth=32210be2d91a8b228f25d66079c1e34860ab618cdec1757d1068816b96cdd820&smart=true&width=1024&height=576');
+    background-size: cover;
+    background-position: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .post {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+        width: 100%;
+        height: 250px;
+        gap: 90%;
+    }
+    .Hero{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 160px;
+        width: 100%;
+        height: 570px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 50px rgba(0, 0, 0, 20%);
+        background-image: url(../../../public/bmw.gif);
+        background-size: cover;
+    }
+}
