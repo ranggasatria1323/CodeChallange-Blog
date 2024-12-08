@@ -41,9 +41,42 @@ export default function Homepage(){
                     <p style={{fontSize:'23px', lineHeight:'33px'}}>Exploring the Elegance and Power: Why the BMW 8 Series Is Your Ultimate Luxury Ride</p>
                 </div>
             </Link>
-            <hr style={{marginTop:'5%'}} />
+            
         </div>
-        
-        
+        <hr style={{marginTop:'15%'}} />
+        <div className={style['post']}>
+            <Link href="" className={style['postHover']}>
+                <div className={style['inlineGrid1']}>
+                    {/* <img style={{height:'auto', width:'100%', objectFit:'cover', borderRadius:'15px'}} src='https://cdn0-production-images-kly.akamaized.net/5SvwpfnqNVacME0dJX8anl1lTWo=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2374839/original/081333200_1538679407-2-6.jpg'
+                    /> */}
+                </div>
+                <p style={{marginTop:'7%', fontSize:'18px', fontWeight:'bold', color:'grey'}}>Sedan</p>
+                <div style={{marginTop:'2%', fontWeight:500, width:'100%', height:'auto'}}>
+                    <p style={{fontSize:'23px', lineHeight:'33px'}} >Unveiling the BMW 3 Series: A Perfect Blend of Performance, Style, and Innovation</p>
+                </div>
+            </Link>
+            <Link href="" className={style['postHover']}>
+                <div className={style['inlineGrid2']}>
+                    {/* <img style={{height:'auto', width:'100%', objectFit:'cover', borderRadius:'15px'}} src='https://akcdn.detik.net.id/visual/2015/03/30/2bea6bee-cd0c-4362-9ea0-f3e11d91f426_169.jpg?w=650'
+                    /> */}
+                </div>
+                <p style={{marginTop:'7%', fontSize:'18px', fontWeight:'bold', color:'grey'}}>SUV</p>
+                <div style={{marginTop:'2%', fontWeight:500, width:'100%', height:'auto'}}>
+                    <p style={{fontSize:'23px', lineHeight:'33px'}}>Discover the Ultimate in Luxury and Performance: Why the BMW X7 Stands Out</p>
+                </div>
+            </Link>
+            <Link href="" className={style['postHover']}>
+                <div className={style['inlineGrid3']}>
+                    {/* <img style={{height:'auto', width:'100%', objectFit:'cover', borderRadius:'15px'}} src='https://www.irishtimes.com/resizer/v2/6LIXU2GRIM6YZMQFCBRDNZGYTE.jpg?auth=32210be2d91a8b228f25d66079c1e34860ab618cdec1757d1068816b96cdd820&smart=true&width=1024&height=576'
+                    /> */}
+                </div>
+                <p style={{marginTop:'7%', fontSize:'18px', fontWeight:'bold', color:'grey'}}>Sport</p>
+                <div style={{marginTop:'2%', fontWeight:500, width:'100%', height:'auto'}}>
+                    <p style={{fontSize:'23px', lineHeight:'33px'}}>Exploring the Elegance and Power: Why the BMW 8 Series Is Your Ultimate Luxury Ride</p>
+                </div>
+            </Link>
+            
+        </div>
+        <hr style={{marginTop:'15%'}} />
     </div>)
 }
