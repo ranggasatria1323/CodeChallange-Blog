@@ -15,6 +15,10 @@
     background-size: cover;
 }
 
+.textHead{
+    width: 50%;
+}
+
 .post {
     display: flex;
     justify-content: space-between;
@@ -79,5 +83,9 @@
         box-shadow: 0px 0px 50px rgba(0, 0, 0, 20%);
         background-image: url(../../../public/bmw.gif);
         background-size: cover;
+    }
+    .textHead{
+        width: 100%;
+        border-radius: 15px;
     }
 }

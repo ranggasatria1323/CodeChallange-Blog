@@ -1,15 +1,33 @@
+"use client"
+
 import style from './hero.module.css'
 import Link from 'next/link'
+import { useEffect,useState } from 'react'
+import { getBlogs } from '@/api/blog'
 
 export default function Homepage(){
+const [blogs, setBlogs] = useState([])
+
+  const handleGetBlogsData = async () => {
+    const data = await getBlogs()
+    setBlogs(data)
+  }
+
+  useEffect(() => {
+    handleGetBlogsData()
+  })
+
     return(<div className={style['container']}>
-        <div className={style['Hero']}>
-            <div style={{padding:'3% 5%', backgroundColor:'white', opacity:'80%', width:'800px', borderTopLeftRadius:'15px', borderBottomLeftRadius:'15px'}}>
-                <p style={{fontWeight:'bold', fontSize:'45px', lineHeight:'50px', opacity:'100%', marginBottom:'20px'}}>BMW M4: Merging Luxury and Power in a High-Performance Driving Experience</p>
-                <p style={{fontWeight:'normal', fontSize:'19px', lineHeight:'50px', opacity:'100%', marginBottom:'30px'}}>7 Desember 2024</p>
+        {blogs.map((item:any, index) => {
+            return(
+        <div className={style['Hero']} key={index}>
+            <div style={{padding:'3% 5%', backgroundColor:'white', opacity:'80%', borderTopLeftRadius:'15px', borderBottomLeftRadius:'15px'}} className={style['textHead']}>
+                <p style={{fontWeight:'bold', fontSize:'45px', lineHeight:'50px', opacity:'100%', marginBottom:'20px'}}>{item?.fields?.title}</p>
+                <p style={{fontWeight:'normal', fontSize:'19px', lineHeight:'50px', opacity:'100%', marginBottom:'30px'}}>{item?.fields?.content}</p>
                 <Link style={{fontSize:'20px', backgroundColor:'#292929', opacity:'100%', borderRadius:'50px', padding:'10px', color:'white'}} href="/">Read Article</Link>
             </div>
-        </div>
+        </div>)
+        })}
         <div className={style['post']}>
             <Link href="" className={style['postHover']}>
                 <div className={style['inlineGrid1']}>
