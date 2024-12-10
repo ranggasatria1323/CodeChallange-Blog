@@ -22,3 +22,9 @@ export async function getBlogDetail(entriesId:string){
     const blogDetail = res.data.fields
     return blogDetail
 }
+
+export async function getAssetDetail(assetId:string){
+    const res = await axios.get(`https://cdn.contentful.com/spaces/lvj02o4fveu0/environments/master/assets/${assetId}?access_token=${access_token}`)  
+    const assetDetail = res.data.fields
+    return assetDetail
+}
