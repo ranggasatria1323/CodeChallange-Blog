@@ -13,8 +13,9 @@ export default function Navbar(){
         />
         <div className={style['navLink']}>
             <Link className={style['link']} href='/'>Home</Link>
+            <Link className={style['link']} href='/blog-post'>Blog Post</Link>
+            <Link className={style['link']} href='/'>Category</Link>
             <Link className={style['link']} href='/'>About</Link>
-            <Link className={style['link']} style={{width:'155px'}} href='/'>Article List</Link>
         </div>
         <div>
             <Link className={style['contact']} style={{border:'1px solid', padding:'10% 25%', borderRadius:'5px', fontWeight:'bold', marginRight:'50px'}} href='/'>Contact</Link>

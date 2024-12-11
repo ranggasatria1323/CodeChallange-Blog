@@ -14,11 +14,11 @@
 
 .navLink {
   display: flex;
-  gap: 10%;
+  width: 450px;
   align-items: center;
   font-size: 20px;
   font-weight: bold;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .link:hover{
