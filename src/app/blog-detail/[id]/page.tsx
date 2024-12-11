@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { getBlogDetail, getAssetDetail } from "@/api/blog";
 
 export default function BlogDetail({ params }: { params: { id: string } }) {
-  const { id } = params;
+  const { id } = React.use(params);
   const [blog, setBlog] = useState<any>(null);
   const [image, setImage] = useState(null);
 
