@@ -1,14 +1,12 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
-import { getBlogDetail, getAssetDetail } from "@/api/blog";
 import { client } from "@/utils/contentfuil";
 
 export default async function BlogDetail({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const blog = (await client.getEntry(params.id)) as any;
+  const blog = (await client.getEntry((await params).id)) as any;
 
   console.log(blog.fields.content1.content[2]);
 
@@ -32,7 +30,7 @@ export default async function BlogDetail({
       </center>
       <hr></hr>
       <div>
-        {blog?.fields.content1?.content.map((item, index) => {
+        {blog?.fields.content1?.content.map((item: any, index: number) => {
           return (
             <p key={index} className="mb-5" style={{ fontSize: "20px" }}>
               {" "}
