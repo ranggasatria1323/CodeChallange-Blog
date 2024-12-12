@@ -1,24 +1,16 @@
-"use client";
-
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { getBlogDetail, getAssetDetail } from "@/api/blog";
+import { client } from "@/utils/contentfuil";
 
-export default function BlogDetail({ params }: { params: { id: string } }) {
-  const { id } = React.use(params);
-  const [blog, setBlog] = useState<any>(null);
-  const [image, setImage] = useState(null);
+export default async function BlogDetail({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const blog = (await client.getEntry(params.id)) as any;
 
-  const handleGetBlogDetail = async () => {
-    const blogDetail = await getBlogDetail(id);
-    const assetDetail = await getAssetDetail(blogDetail?.image?.sys?.id);
-    setBlog(blogDetail);
-    setImage(assetDetail);
-  };
-
-  useEffect(() => {
-    handleGetBlogDetail();
-  }, []);
+  console.log(blog.fields.content1.content[2]);
 
   return (
     <div style={{ marginTop: "100px", padding: "0 10%" }}>
@@ -30,20 +22,29 @@ export default function BlogDetail({ params }: { params: { id: string } }) {
           textAlign: "center",
         }}
       >
-        {blog?.title}
+        {blog?.fields?.title}
       </h1>
-      <center><img src={image?.file?.url ? image?.file?.url : "https://via.placeholder.com/150"} style={{margin:'20px 0', borderRadius:'15px', height:'500px'}} /></center>
+      <center>
+        <img
+          src={blog.fields.image?.fields.file?.url}
+          style={{ margin: "20px 0", borderRadius: "15px", height: "500px" }}
+        />
+      </center>
       <hr></hr>
       <div>
-        {blog?.content1?.content.map((item, index) => {
+        {blog?.fields.content1?.content.map((item, index) => {
           return (
-            <p key={index} className="mb-5" style={{fontSize:'20px'}}>
+            <p key={index} className="mb-5" style={{ fontSize: "20px" }}>
               {" "}
-              {item.content
-                .map((item2) => {
-                  return item2.value;
-                })
-                .join(" ")}{" "}
+              {item.content.map(
+                (item2: { value: string; marks: Array<{ type: string }> }) => {
+                  return item2.marks.length && item2.marks[0].type == "bold" ? (
+                    <b>{item2.value}</b>
+                  ) : (
+                    item2.value
+                  );
+                }
+              )}
             </p>
           );
         })}
